@@ -12,6 +12,7 @@ public:
     Object* get_key();
     Object* get_value();
     void set_next(DictionaryEntry *next);
+    DictionaryEntry* get_next() const;
     // WARNING
     DictionaryEntry *next_ = nullptr;
 private:
@@ -22,10 +23,11 @@ class Dictionary : public Object {
 public:
     Dictionary();
     ~Dictionary() override;
-    std::ostream& operator<<(std::ostream& os) override;
     void add(Object *key, Object *value);
+protected:
+    void print(std::ostream& os) override;
 private:
-    DictionaryEntry *entries_;
+    DictionaryEntry *entries_head_ = nullptr, *entries_tail_ = nullptr;
 };
 
 

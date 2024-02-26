@@ -1,8 +1,10 @@
 #include "Header.h"
 
-Header::Header() = default;
+Header::Header() {
 
-std::ostream &Header::operator<<(std::ostream &os) {
-    os << token::COMMENT << this->VERSION_ << ' ' << token::COMMENT << this->COMMENT_BUFFER_;
+}
+
+std::ostream &operator<<(std::ostream &os, Header &header) {
+    os << token::COMMENT << header.VERSION_ << ' ' << token::COMMENT <<header.COMMENT_BUFFER_;
     return os;
 }

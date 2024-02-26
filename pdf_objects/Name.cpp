@@ -1,10 +1,7 @@
 #include "Name.h"
 
-Name::~Name() {
-    delete name_;
-}
+Name::~Name() = default;
 
-std::ostream &Name::operator<<(std::ostream &os) {
-    os << token::NAME << name_;
-    return os;
+void Name::print(std::ostream &os) {
+    os << token::NAME << this->name_;
 }

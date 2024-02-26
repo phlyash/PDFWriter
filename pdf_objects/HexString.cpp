@@ -1,10 +1,11 @@
 #include "HexString.h"
 
-std::ostream &HexString::operator<<(std::ostream &os) {
-    for(const char* string_char = this->string_; *string_char != '\0';) os << std::setfill ('0') << std::setw(sizeof(char) * 2) << std::hex << (int)*string_char++;
-    return os;
-}
+HexString::~HexString() = default;
 
-HexString::~HexString() {
-    delete[] string_;
+void HexString::print(std::ostream &os) {
+    os << token::HEX_STRING_OPEN;
+
+    for(char string_char : this->string_) os << std::setfill ('0') << std::setw(sizeof(char) * 2) << std::hex << string_char;
+
+    os << token::HEX_STRING_CLOSE;
 }

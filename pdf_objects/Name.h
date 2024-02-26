@@ -9,11 +9,12 @@
 
 class Name : public Object {
 public:
-    Name(std::string *name) : name_(name) {}
+    Name(const char* name) : name_(name) {}
     ~Name() override;
-    std::ostream& operator<<(std::ostream& os) override;
+protected:
+    void print(std::ostream &os) override;
 private:
-    std::string *name_;
+    std::string name_;
 };
 
 

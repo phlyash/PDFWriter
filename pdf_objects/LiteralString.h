@@ -8,10 +8,11 @@
 class LiteralString : public Object {
 public:
     LiteralString(const char* string) : string_(string) {}
-    std::ostream& operator<<(std::ostream& os) override;
     ~LiteralString() override;
+protected:
+    void print(std::ostream& os) override;
 private:
-    const char* string_;
+    std::string string_;
 };
 
 

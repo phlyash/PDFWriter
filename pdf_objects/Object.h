@@ -7,7 +7,12 @@
 class Object {
 public:
     virtual ~Object() = default;
-    virtual std::ostream& operator<<(std::ostream& os) = 0;
+    friend std::ostream& operator<<(std::ostream& os, Object& object) {
+        object.print(os);
+        return os;
+    }
+protected:
+    virtual void print(std::ostream& os) = 0;
 };
 
 

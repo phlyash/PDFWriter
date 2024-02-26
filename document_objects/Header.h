@@ -7,7 +7,7 @@
 class Header {
 public:
     Header();
-    std::ostream& operator<<(std::ostream &os);
+    friend std::ostream& operator<<(std::ostream &os, Header &header);
 private:
     const char* VERSION_ = "PDF-1.6";
     const char* COMMENT_BUFFER_ = "...Binary characters...";

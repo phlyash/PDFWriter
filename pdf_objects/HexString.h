@@ -3,15 +3,18 @@
 
 
 #include "Object.h"
+#include "../token.cpp"
 #include <iomanip>
+#include <string>
 
 class HexString : public Object {
 public:
     HexString(const char* string) : string_(string) {}
-    std::ostream& operator<<(std::ostream& os) override;
     ~HexString() override;
+protected:
+    void print(std::ostream &os) override;
 private:
-    const char* string_;
+    std::string string_;
 };
 
 

@@ -24,4 +24,14 @@ add_executable(PDFWriter main.cpp
         pdf_objects/Name.h
         pdf_objects/Dictionary.cpp
         pdf_objects/Dictionary.h
+        pdf_objects/Integer.cpp
+        pdf_objects/Integer.h
+        pdf_objects/Float.cpp
+        pdf_objects/Float.h
+        pdf_objects/Array.cpp
+        pdf_objects/Array.h
+        pdf_objects/Stream.cpp
+        pdf_objects/Stream.h
+        pdf_objects/Boolean.cpp
+        pdf_objects/Boolean.h
 )

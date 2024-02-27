@@ -9,13 +9,14 @@ class DictionaryEntry {
 public:
     DictionaryEntry(Object *key, Object *value) : key_(key), value_(value) {}
     ~DictionaryEntry();
-    Object* get_key();
-    Object* get_value();
     void set_next(DictionaryEntry *next);
-    DictionaryEntry* get_next() const;
+    // yet there is no point to change those fields
+    [[nodiscard]] Object* get_key() const;
+    [[nodiscard]] Object * get_value() const;
+    [[nodiscard]] DictionaryEntry* get_next() const;
+private:
     // WARNING
     DictionaryEntry *next_ = nullptr;
-private:
     Object *key_, *value_;
 };
 
